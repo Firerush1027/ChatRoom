@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="ChatClient.View.OnlineUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChatClient"
+             xmlns:views="clr-namespace:ChatClient.View"            
+             xmlns:vml = "clr-namespace:ChatClient.VML"
+             vml:ViewModelLocator.AutoHookedUpViewModel = "True"
+             mc:Ignorable="d" 
+             FontFamily="Arial Rounded MT Bold" FontSize="14">
+    <ListView HorizontalAlignment="Left" Height="363" VerticalAlignment="Top" Width="183" BorderThickness="0,1,1,1" Background="#FFE4E4E4" ItemsSource="{Binding OnlineClient}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <Grid Margin="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Margin="0,5,0,0" Text="{Binding IP}" />
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</UserControl>

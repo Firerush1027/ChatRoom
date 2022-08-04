@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="ChatClient.View.ServerListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ChatClient"
+             xmlns:views="clr-namespace:ChatClient.View"            
+             xmlns:vml = "clr-namespace:ChatClient.VML"
+             vml:ViewModelLocator.AutoHookedUpViewModel = "True"
+             mc:Ignorable="d" 
+             FontFamily="Arial Rounded MT Bold" FontSize="14">
+    <ListView HorizontalAlignment="Left" Height="360" Margin="10,49,0,0" VerticalAlignment="Top" Width="201" RenderTransformOrigin="-0.605,-0.726" BorderBrush="{x:Null}" Foreground="Black" Background="#FFE4E4E4" ItemsSource="{Binding ServerList}" SelectedItem="{Binding SelectedServer}" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <Grid Margin="5,5,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="{Binding Status}" />
+                    <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                        <TextBlock Margin="15,5,5,4" Text="{Binding RoomName}" />
+                        <TextBlock Margin="15,5,5,4" Text="{Binding ClientNum}" />
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</UserControl>
